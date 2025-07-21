@@ -1,0 +1,55 @@
+# ========================
+# Node.js
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ========================
+# TypeScript
+# ========================
+dist/
+build/
+*.tsbuildinfo
+
+# ========================
+# Ambiente / Configuração
+# ========================
+.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+
+# ========================
+# Logs e arquivos temporários
+# ========================
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.swp
+
+# ========================
+# MongoDB
+# ========================
+dump/
+*.mongodb
+
+# ========================
+# Docker
+# ========================
+docker-compose.override.yml
+docker-compose.dev.yml
+.docker/
+*.pid
+*.seed
+
+# ========================
+# OS específicos
+# ========================
+.DS_Store
+Thumbs.db
