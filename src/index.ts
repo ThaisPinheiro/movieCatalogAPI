@@ -3,7 +3,7 @@ import { connectToDatabase } from './infra/database';
 import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import { errorHandler } from './middlewares/error-handler';
-import favoriteRoutes from './routes/movies-route';
+import favoriteRoutes from './routes/movies';
 import cors from 'cors';
 require('dotenv').config();
 

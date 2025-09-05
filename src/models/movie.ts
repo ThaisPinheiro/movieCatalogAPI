@@ -1,24 +1,26 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
 
 interface Movie extends Document {
-  movieId?: string;
-  title?: string;
+	_id: mongoose.Types.ObjectId;  title?: string;
   posterPath?: string;
-  date?: string;
+  releaseDate?: string;
   overview?: string;
   favorite: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-const favoriteMoviesSchema = new mongoose.Schema({
-    id: String,
+const movieSchema = new mongoose.Schema({
+   	_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      auto: true,
+    },
     title: {
         type: String,
         maxlength: 50
     },
     posterPath: String,
-    date: String,
+    releaseDate: String,
     overview: {
         type: String,
         maxlength: 1000
@@ -29,8 +31,7 @@ const favoriteMoviesSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-favoriteMoviesSchema.index({ id: 1 }, { unique: true });
-const model = mongoose.model('FavoriteMovies', favoriteMoviesSchema);
+const model = mongoose.model<Movie>('Movie', movieSchema);
 
 export {
     Movie,

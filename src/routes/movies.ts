@@ -1,13 +1,12 @@
 import express from 'express';
 const router = express.Router();
-import * as moviesController from '../controllers/movies-controller';
+import * as moviesController from '../controllers/movies';
 import * as validations from '../middlewares/validations';
 
 router.get('/user/:userId',
   moviesController.getAllMovies);
 
 router.get('/user/:userId/favorites',
-  validations.validateUser,
   moviesController.getFavoriteMovies);
 
 router.get('/search',

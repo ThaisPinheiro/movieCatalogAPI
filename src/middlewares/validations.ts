@@ -1,7 +1,7 @@
 const validateSearchParams = (req, res, next) => {
-  const { userId, title } = req.query;
+  const { title } = req.query;
 
-  if (!userId || !title) {
+  if (!title) {
       return res.status(400).json({ message: errorMessages.titleRequired });
   }
 
@@ -20,19 +20,10 @@ const validateFavorite = (req, res, next) => {
   next();
 }
 
-const validateUser = (req, res, next) => {
-  const { userId } = req.params;
-  if (!userId) {
-      return res.status(400).json({ message: errorMessages.userIdRequired });
-  }
-  next();
-}
-
 const errorMessages = {
   titleRequired: 'User ID and title are required.',
   titleTooLong: 'Title is too long.',
   favoriteBoolean: 'Favorite must be a boolean value.',
-  userIdRequired: 'User ID is required.',
 };
 
-export { validateSearchParams, validateFavorite, validateUser };
+export { validateSearchParams, validateFavorite };
